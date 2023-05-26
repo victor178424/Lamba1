@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казанцев Виктор, Колесников Дмитрий. Лабораторная 6</title>
+    <link rel="stylesheet" href="main.css">
+
+    <script>
+        function addBlocks() {
+            let blocks= document.getElementById('blocks');
+            for(let i=0; i<10; i++) {
+                let block= document.createElement('div');
+                block.innerHTML= 'Блок №' +(i+1)+ ':' + (2 * i**2);
+
+                blocks.appendChild(block);
+            }
+        }
+
+        function showExchange() {
+            let exchange= [70.5174, 70.1217, 70.0414, 70.3847, 70.5991,
+                           70.8924, 71.5763, 72.8949, 72.7923, 73.6307];
+            let table = document.getElementById('dollar-exchange');
+            for(let i = 0; i < exchange.length; i++) {
+                let tr=document.createElement('tr');
+                let td=document.createElement('td');
+                td.innerHTML= exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+            let sum=0;
+            for (i=0; i<exchange.length; i++) {
+                sum= sum+ exchange[i];
+            }
+            let average= sum / exchange.length;
+            document.getElementById('detail').innerHTML= 'Среднее значение:' + average;
+        }
+
+        function addTransparentBlocks() {
+            let transBlocks = document.getElementById('transparent-blocks');
+            
+            for (let i=0; i<10; i++) {
+                let transBlock = document.createElement('div');
+                transBlock.style.opacity = (i*10) + '%';
+                transBlock.innerHTML = 'Блок №' + (i+1);
+
+                transBlocks.appendChild(transBlock);
+            }
+        }
+
+        function radGreen() {
+            let rgs = document.getElementById('circles');
+            let input = document.getElementById('switch');
+            let userNumber = parseInt(input.value);
+
+            for (let i=0; i<userNumber; i++) {
+                let rg = document.createElement('div');
+                rg.style.borderRadius = '50%';
+                rg.style.padding= '20px';
+                rg.style.width = '20px';
+                rg.innerHTML = userNumber-i;
+                rg.style.textAlign = 'center';
+                rg.style.color = 'white';
+                rgs.appendChild(rg);
+                if ((userNumber-i)%2==0) {
+                    rg.style.background = 'green';
+                }
+                else { 
+                    rg.style.background = 'red';
+                }
+            }
+        }
+
+        function Calculate() {
+            let number= 86;
+            let table= document.getElementById('number');
+
+            for( let i=13; i<=33; i++) {
+                let tr= document.createElement('tr');
+                let td= document.createElement('td');
+                td.innerHTML= number+'*'+i+'='+(number*i);
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+        }
+
+        function Calcul() {
+            let numberr= 89;
+            let table= document.getElementById('numberr');
+
+            for( let i=13; i<=33; i++) {
+                let tr= document.createElement('tr');
+                let td= document.createElement('td');
+                td.innerHTML= numberr+'*'+i+'='+(numberr*i);
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+        }
+
+        function stockPrice() {
+            let date = ['27.05.2023', '25.05.2023', '24.05.2023', '23.05.2023', '22.05.2023',
+                        '19.05.2023', '18.05.2023', '17.05.2023', '16.05.2023','15.05.2023'];
+            let price = [0.2212, 0.2185, 0.2152, 0.2127, 0.2132, 0.2141, 0.2152, 0.2164, 0.2165, 0.2153];
+            let diff = [ '-', (price[0]-price[1]).toFixed(4), (price[1]-price[2]).toFixed(4), (price[2]-price[3]).toFixed(4), (price[3]-price[4]).toFixed(4), (price[4]-price[5]).toFixed(4), (price[5]-price[6]).toFixed(4), (price[6]-price[7]).toFixed(4), (price[7]-price[8]).toFixed(4), (price[8]-price[9]).toFixed(4)];
+            let table = document.getElementById('stock-price');
+            
+            for (let i = 0; i < date.length; i++) {
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                let td2 = document.createElement('td');
+                let td3 = document.createElement('td');
+                td1.innerHTML = date[i];
+                td2.innerHTML = price[i];
+                td3.innerHTML = diff[i];
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                table.appendChild(tr);     
+            }
+
+            let sum=0;
+            for (let i = 0; i < price.length; i++) {
+                sum = sum + price[i];
+            }
+            let average = sum / price.length;
+            document.getElementById('average-price').innerHTML = 'Среднее значение: ' + average;
+
+            let max = 0;
+            let min = price[0];
+            for (let i = 0; i < price.length; i++) {
+                if (max<price[i]) {
+                    max = price[i];
+                }
+                else if (min>price[i]) {
+                    min = price[i];
+                    }
+            }
+            document.getElementById('min').innerHTML = 'Минимальное значение: ' + min;
+            document.getElementById('max').innerHTML = 'Максимальное значение: ' + max;
+        }
+            
+    </script>
+</head>
+<body>
+    <header>
+ НГТУ, ФБ, Лабораторная 7
+    </header>
+    <main>
+        <button onclick="addBlocks()">Создать блоки</button>
+        <div id="blocks"></div>
+
+        <button onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-exchange"></table>
+        <div id="detail"></div>
+
+        <button  onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
+        <div id="transparent-blocks"></div>
+
+        <input type="number" value="5" id="switch" placeholder="Введите число кругов">
+        <button onclick="radGreen()">красное/зеленое</button>
+        <div id="circles"></div>
+
+        <button onclick="Calculate()">Таблица умножения на 86</button>
+        <table border="1" id="number"></table>
+
+        <button onclick="Calcul()">Таблица умножения на 89</button>
+        <table border="1" id="numberr"></table>
+
+        <button onclick="stockPrice()">Россети Центр и Приволжье</button>
+        <table border="1" id="stock-price"></table>
+        <div id="average-price"></div>
+        <div id="min"></div>
+        <div id="max"></div>
+        
+    </main>
+
+    <footer>
+ &copy; Казанцев Виктор, Колесников Дмитрий, ФБИ-12, 2 курс, 2023
+    </footer>
+</body>
+</html>

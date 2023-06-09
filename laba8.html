@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казанцев Виктор, Басман Артём. Лабораторная 8</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="laba8.js"></script>
+
+</head>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <div id="time">00:00:00</div>
+    </header>
+    
+    <main style="color: rgb(94, 10, 173); font-family: 'Courier New', Courier, monospace; margin: 30px; padding: 10px;">
+        <div id="current-date"></div>
+        <div id="current-engl"></div>
+        <div id="current-german"></div>
+        <div id="current-china"></div>
+        <div id="current-korea"></div>
+        <div id="current-greek"></div>
+        <div id="current-date"></div>
+
+        <div>
+            <tabel>Дата рождения: <input type="date"></tabel>
+        </div>
+        <div>
+            <button onclick="showDaysCount()">Показать число дней</button>
+        </div>
+        <div id="count-days"></div>
+    </main>
+
+    <footer>
+        &copy; Казанцев Виктор, Басман Артём, ФБИ-12, 2 курс, 2023
+    </footer>
+</body>
+
+</html>

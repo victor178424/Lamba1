@@ -1,0 +1,48 @@
+body {
+    background-color: lightblue;
+    color: maroon;
+    font-family: Arial;
+    margin: 0px;
+}
+
+header {
+    background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue, darkblue, purple);
+    color: lightgreen;
+    padding: 10px;
+    font-size: 16pt;
+}
+
+footer {
+    background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue, darkblue, purple);
+    color: lightgreen;
+    padding: 10px;
+    font-size: 16pt;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+}
+
+a:visited {
+    color: yellow;
+}
+
+a {
+    text-shadow: 5px 5px 3px black;
+    color: green;
+    text-decoration: none;
+    transition: 600ms 1s;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    background-color: white;
+    font-weight: bold;
+    transition: 3ms;
+}
+
+a:active {
+    color: pink;
+    background-color: green;
+    transition: 1s;
+}

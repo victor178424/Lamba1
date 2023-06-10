@@ -12,6 +12,15 @@ header {
     font-size: 16pt;
 }
 
+main {
+    margin: 10px 20px;
+}
+
+header:hover {
+    color: blueviolet;
+    font-size: 50px;
+}
+
 footer {
     background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue, darkblue, purple);
     color: lightgreen;
@@ -22,8 +31,9 @@ footer {
     bottom: 0;
 }
 
-a:visited {
-    color: yellow;
+footer:hover {
+    color: blueviolet;
+    font-size: 25px;
 }
 
 a {
@@ -31,6 +41,10 @@ a {
     color: green;
     text-decoration: none;
     transition: 600ms 1s;
+}
+
+a:visited {
+    color: yellow;
 }
 
 a:hover {
@@ -45,4 +59,58 @@ a:active {
     color: pink;
     background-color: green;
     transition: 1s;
+}
+
+.game {
+    border: 20px solid;
+    border-radius: 10px;
+    border-width: 1px;
+    margin: 10px auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.pravila {
+    background-color: cornsilk;
+    border: 20px solid;
+    border-radius: 10px;
+    border-width: 1px;
+    margin: 10px auto;
+    padding: 5px;
+    text-align: left;
+}
+
+.color {
+    background-color: yellow;
+    border-color: red;
+    border: 20px solid;
+    border-width: 1px;
+    text-align: center;
+    margin: 10px 40px 10px 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.click {
+    border: 3px solid black;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    background-color: pink;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+}
+
+.expanding {
+    border: 3px solid black;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    background-color: orange;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    margin: 20px;
+    hyphens: auto;
+    top: 305px;
 }

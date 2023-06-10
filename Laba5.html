@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казанцев Виктор. Лабораторная 5</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function showSum() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a + b;
+            alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showAutor() {
+            let autor = 'Добро пожаловать на нашу страницу!\nАвтор страницы:\nКазанцев Виктор'
+            alert(autor);
+        }
+        function showRaznost() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showProizved() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произведение ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showDel() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Деление ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function changeOutput(buttonNum, backColor, textColor, border) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderBlock = border;
+            output.style.borderInline = border;
+        }
+        function changeRaschet() {
+            let input1 = document.getElementById('number1');
+            let input2 = document.getElementById('number2');
+            let input3 = document.getElementById('number3');
+            let input4 = document.getElementById('number4');
+
+            let resultat = document.getElementById('resultat');
+
+            let a = 20;
+            let b = 20;
+            let c = 64;
+            let d = 28;
+
+            let a1 = parseInt(input1.value);
+            let b2 = parseInt(input2.value);
+            let c3 = parseInt(input3.value);
+            let d4 = parseInt(input4.value);
+
+            let result = a * a1 + b * b2 + c * c3 + d * d4;
+            resultat.innerHTML = 'Общая цена: ' + result + ' p';
+        }
+        function showKrug(num) {
+            let krug = document.getElementById(num);
+            krug.style.opacity = 0;
+        }
+    </script>
+
+    <style>
+        .message {
+            height: 30px;
+            width: 230px;
+            border: 1px solid;
+            border-radius: 10px;
+            background-color: pink;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        #output {
+            border: 1px soild;
+            width: 100px;
+            height: 40px;
+        }
+
+        .korzina {
+            border: 2px solid plum;
+            width: 500px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .krug {
+            margin-top: 30px;
+            margin-left: 5px;
+            width: 30px;
+            height: 24px;
+            text-align: center;
+            border: 3px solid plum;
+            border-radius: 50%;
+            padding-top: 6px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <header onclick="showAutor()">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
+        <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        <div class="message" onclick="showSum()">Найти сумму чисел</div>
+
+        <div class="message" onclick="showRaznost()">Найти разность чисел</div>
+
+        <div class="message" onclick="showProizved()">Найти произведение чисел</div>
+
+        <div class="message" onclick="showDel()">Найти деление чисел</div>
+
+        <div class="message" onclick="showAutor()">Узнать, кто авторы страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'outset')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', 'outset')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'orange', 'blue', 'outset')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'pink', 'white', 'outset')">
+        </div>
+
+        <div id="output"></div>
+
+        <div class='korzina'>
+            <h3>Корзина товаров</h3>
+            <label>Яблоки (100р/шт): <br><input type="number" value="0" min="0" id="number1"></label><br>
+            <label>Груши (80р/шт): <br><input type="number" value="0" min="0" id="number2"></label><br>
+            <label>Апельсины (150р/шт): <br><input type="number" value="0" min="0" id="number3"></label><br>
+            <label>Дыни (300р/шт): <br><input type="number" value="0" min="0" id="number4"></label><br>
+            <input type="button" value="Рассчитать" onclick="changeRaschet()">
+            <p id="resultat"></p>
+        </div>
+
+        <div class='krug' id="1" style="color: darkorchid; background-color: darkblue;" onclick="showKrug(1)">1</div>
+        <div class='krug' id="2" style="color:aquamarine; background-color: fuchsia" onclick="showKrug(2)">2</div>
+        <div class='krug' id="3" style="color:lightcoral; background-color:indigo" onclick="showKrug(3)">3</div>
+        <div class='krug' id="4" style="color:pink; background-color: black" onclick="showKrug(4)">4</div>
+        <div class='krug' id="5" style="color:dodgerblue ;background-color: navy" onclick="showKrug(5)">5</div>
+        <div class='krug' id="6" style="color:springgreen ; background-color: dimgrey" onclick="showKrug(6)">6</div>
+        <div class='krug' id="7" style="color:honeydew ; background-color: deeppink" onclick="showKrug(7)">7</div>
+        <div class='krug' id="8" style="color:red ; background-color: palegreen" onclick="showKrug(8)">8</div>
+        <div class='krug' id="9" style="color:linen ;background-color: midnightblue" onclick="showKrug(9)">9</div>
+        <div class='krug' id="10" style="color:steelblue ;background-color: lightsalmon;" onclick="showKrug(10)">10
+        </div>
+    </main>
+
+    <footer onclick="showAutor()">
+        &copy; Казанцев Виктор, ФБИ-12, 2 курс, 2023
+    </footer>
+</body>
+
+</html>
